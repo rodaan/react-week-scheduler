@@ -120,12 +120,15 @@ class WeeklyScheduler extends React.Component {
     this.setState({ days: newDays });
   }
   render() {
-    const { events, defaultEvent } = this.props;
+    const { events, defaultEvent, legendTitle } = this.props;
     const { currentEvent } = this.state;
     return (
       <div id="WeeklySchedulerTable">
         <EventSelector
-          events={events} selectedEvent={currentEvent} selectEvent={this.handleSelectEvent}
+          events={events}
+          selectedEvent={currentEvent}
+          selectEvent={this.handleSelectEvent}
+          legendTitle={legendTitle}
         />
         <table>
           <DayHeader />

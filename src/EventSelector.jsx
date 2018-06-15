@@ -1,12 +1,13 @@
 import React from 'react';
 
-export default function EventSelector({ events, selectedEvent, selectEvent }) {
+export default function EventSelector({ events, selectedEvent, selectEvent, legendTitle }) {
   const onRadioClick = eventSelected => () => {
     selectEvent(eventSelected);
   };
+  const title = legendTitle || 'Events: ';
   return (
     <fieldset id="EventSelector">
-      <legend>Events: </legend>
+      <legend>{title}</legend>
       <div className="legend-body">
         {events.map(event => (
           <div className="radio-item" key={event.event}>
